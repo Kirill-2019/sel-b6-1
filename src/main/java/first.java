@@ -5,13 +5,16 @@ import java.util.concurrent.TimeUnit;
 
 public class first {
    private static WebDriver WD;
-   public static void main(String[] args) throws InterruptedException {
+   public static void main(String[] args){
 
 
       WD = new ChromeDriver();
 
       WD.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-      WD.get("https://yandex.ru/");
+      WD.get("http://localhost/litecart/admin/");
+
+      login.login(WD);
+
       WD.close();
       WD.quit();
 
